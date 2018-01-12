@@ -17,12 +17,9 @@ import qualified Foreign.JNI.String as S
 retrieveLibraries :: String -> IO [FilePath]
 retrieveLibraries = find always (extension ==? ".jar")
 
-argLibs :: [String] -> [String]
-argLibs = intersperse ":"
-
 jvmOptions natives libs = do
     jars <- retrieveLibraries libs
-    return ["-Djava.library.path=" ++ natives, "-Djava.class.path=" ++ flatten (argLibs jars)]
+    return ["-Djava.library.path=" ++ natives, "-Djava.class.path=" ++ flatten (intersperse ":" jars)]
 
 jvmOptions' = jvmOptions "natives" "libs"
 
