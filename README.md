@@ -14,9 +14,11 @@ Happy skidding!
 
 ### Getting Started
 
-    - install JNI using stack, I used this command:
-    `stack install --extra-lib-dirs=/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/server --extra-include-dirs=/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/include --extra-include-dirs=/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/include/darwin jni --ghc-options -rpath,/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/server`
-    I am on macOS so make sure to set `LD_LIBRARY_PATH` to libjvm.dylib as well!
+- install JNI using cabal, I used this command:
+`cabal install --extra-lib-dirs=/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/server --extra-include-dirs=/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/include --extra-include-dirs=/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/include/darwin jni`
+I am on macOS so make sure to set `LD_LIBRARY_PATH` to libjvm.dylib as well!
+`export LD_LIBRARY_PATH=/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/server`
+
 
 ### Disclaimer
 
